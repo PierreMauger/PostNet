@@ -1,0 +1,20 @@
+.post {
+    text-align: center;
+}
+
+.posterInfo {
+    
+}
+
+.photoProfile {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.profileName {
+    color: blue;
+}
+
+.postText {
+    color: black;
+}
