@@ -3,11 +3,14 @@ import router from "./routes/router"
 import { inject, errorHandler } from "express-custom-error"
 import express from "express"
 import cookieParser from "cookie-parser"
-import { DB_PORT, DB_NAME } from './models/appConfig';
+import { DB_NAME } from './models/appConfig';
 import dbInitialize from './models/appDatabase';
+import { createConnection } from 'typeorm';
 
 // Patches
 inject(); // Patch express in order to use async / await syntax
+
+const PORT = 3030;
 
 const app = express();
 
@@ -37,8 +40,8 @@ app.use('*', (req, res) => {
 })
 
 // Open Server on configurated Port
-app.listen(DB_PORT, () => {
-    console.info('Server listening on port', DB_PORT)
+app.listen(PORT, () => {
+    console.info('Server listening on port', PORT)
     dbInitialize()
         .then(() => console.log(`Database ${DB_NAME} is ready`))
         .catch((err) => console.log(`Failed to load database: ${err}`));
