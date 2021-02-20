@@ -6,7 +6,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 
 import './post.css'
 
@@ -48,21 +47,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Post(props: Postprops) {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
 
     return (
         <Card className={classes.root}>
             <CardHeader
                 avatar={<Avatar alt="" src={props.imgProfileURL} />}
-                title={props.postTitle}
+                title={props.profileName}
                 subheader={props.postDate}
             />
             <CardMedia
                 className={classes.media}
+                // name={props.postTitle}
                 image={props.imgPostUrl}
             />
             <CardContent>
