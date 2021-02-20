@@ -15,8 +15,7 @@ env.load([
     'DB_DATABASE',
     'DB_USER',
     'DB_PASSWORD',
-    'PORT',
-    'SECRET'
+    'PORT'
 ]);
 
 const { PORT } = process.env;
