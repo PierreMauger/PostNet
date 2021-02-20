@@ -1,14 +1,30 @@
-import React from "react"
+import React from "react";
+import { render } from "react-dom";
+import './button.css';
 
-class Button extends React.Component {
-    handleClick() {
-        console.log('this vault :', this);
-    }
-    render() {
-        return (
-            <button onClick={() => this.handleClick()}>
-                Clique ici
+function myProfile() {
+    alert('Not yours, mine !');
+}
+
+function yourProfile() {
+    alert("Yes, yours... But it isn't here yet. :P");
+}
+
+function meltingPosts() {
+    alert('Supposedly, there should be posts from all over the page...');
+}
+export default function Click() {
+    return (
+        <div>
+            <button onClick = {myProfile}>
+                My_Profile
             </button>
-        );
-    }
+            <button onClick = {yourProfile}>
+                Your_Profile
+            </button>
+            <button onClick = {meltingPosts}>
+                meltingPosts
+            </button>
+        </div>
+    );
 }
