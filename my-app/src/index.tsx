@@ -8,7 +8,6 @@ import ShowProfile from "./component/profile/profile";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ShowPost imgProfileURL='lol' profileName='lol' profileID={1} postTitle='lol' postMessage='lol' /> */}
     <ToolBar appTitle="POSTNET" />
     {/* <Click/> */}
     {/* <ShowProfile imgProfileURL='URL for Image Profile' profileName='PIIIEEERRREE' profileID={2} profileMessage='ça se prononce gui' usrMood="Tout le monde s'appelle Pierre ici ?"/> */}
