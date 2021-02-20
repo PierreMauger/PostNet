@@ -12,24 +12,24 @@ import './toolbar.css'
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appBar: {
-            backgroundColor: '#534e52',
+            backgroundColor: '#00000',
         },
         root: {
             flexGrow: 1,
         },
         menuButton: {
             marginRight: theme.spacing(2),
-            color: '#f2d974',
+            color: '#eeeeee',
         },
         title: {
             flexGrow: 1,
             fontSize: 40,
             fontFamily: 'Faster One',
-            color: '#f2d974',
+            color: '#eeeeee',
         },
         loginIcon: {
             fontFamily: 'Faster One',
-            color: '#f2d974',
+            color: '#eeeeee',
             fontSize: 20,
         }
     }),

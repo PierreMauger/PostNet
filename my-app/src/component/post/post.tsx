@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             maxWidth: 800,
-            backgroundColor: "#c7956d",
+            backgroundColor: "#d3e0ea",
             flexGrow: 0,
             margin: 'auto',
             marginTop: 10,
@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme: Theme) =>
         expandOpen: {
             transform: 'rotate(180deg)',
         },
+        textMessage: {
+            fontFamily: 'Merriweather Sans',
+        }
     }),
 );
 
@@ -57,11 +60,10 @@ export default function Post(props: Postprops) {
             />
             <CardMedia
                 className={classes.media}
-                // name={props.postTitle}
                 image={props.imgPostUrl}
             />
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">{props.postMessage}</Typography>
+                <Typography variant="body2" color="textSecondary" component="p" className={classes.textMessage}>{props.postMessage}</Typography>
             </CardContent>
         </Card>
     );

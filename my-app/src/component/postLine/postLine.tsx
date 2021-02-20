@@ -10,7 +10,7 @@ export default function Postline() {
                     profileName="God"
                     profileID={1}
                     postDate="December 12, 2012"
-                    imgPostUrl="https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/d8/images/methode/2020/12/25/796eefd6-4687-11eb-be92-09cd005df0bf_image_hires_171827.jpg?itok=LN5ReEYj&v=1608887922"
+                    imgPostUrl="https://i.kym-cdn.com/entries/icons/facebook/000/021/565/angry.jpg"
                     postTitle="Universal collapse"
                     postMessage="I will kill you all."
                 />
