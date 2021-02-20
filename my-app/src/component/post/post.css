@@ -1,9 +1,10 @@
 .post {
     text-align: center;
+    background-color: cadetblue;
 }
 
 .posterInfo {
-    
+    color: black;
 }
 
 .photoProfile {
