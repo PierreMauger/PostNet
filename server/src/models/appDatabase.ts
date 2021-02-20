@@ -1,15 +1,15 @@
 import { createConnection, Connection } from 'typeorm';
 import { dbConfig } from './appConfig';
 
-export default async function dbInitialize(): Promise<void> {
-    await createDatabase({ databaseName: DB_NAME }, db)
-        .then(() => console.log('Database has beed created'))
-        .catch((e) => console.error(e.message));
-
+export default async function dbInitialize(): Promise<Connection> {
     const dbClient = await createConnection({
         type: 'postgres',
-        entities: [`${__dirname}/${ENTITIES_FOLDER}/**/*.ts`],
-        url: DB_URL,
+        host: dbConfig.host,
+        port: dbConfig.port,
+        username: dbConfig.username,
+        password: dbConfig.password,
+        database: dbConfig.database,
+        url: dbConfig.url,
     });
-    return dbClient.synchronize();
+    return dbClient;
 }

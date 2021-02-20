@@ -6,16 +6,16 @@ import {
 export default class User extends BaseEntity {
     @PrimaryGeneratedColumn('uuid')
     id!: string;
-    
+
     @Column()
     name: string;
-    
+
     @Column()
     age: number;
-    
+
     @Column()
     school: string;
-    
+
     @Column()
     experience: number;
 

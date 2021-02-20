@@ -3,7 +3,7 @@ import { Pool } from 'pg';
 export class Database {
     private static instance: Database;
 
-    private _db:Pool;
+    private _db: Pool;
 
     private constructor() {
         this._db = new Pool({
@@ -22,8 +22,7 @@ export class Database {
         return Database.instance;
     }
 
-    public PostgreQuery(req: string)
-    {
+    public PostgreQuery(req: string) {
         return new Promise<Array<any>>((resolve, reject) => {
             this._db.query(req, (err, res) => {
                 if (err) {

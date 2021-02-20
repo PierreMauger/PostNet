@@ -1,9 +1,10 @@
-import {createConnection, Connection} from "typeorm";
+import { createConnection } from "typeorm";
+import { DB_PORT } from '../../models/appConfig'
 
 const connection = await createConnection({
     type: "mysql",
     host: "localhost",
-    port: 3000,
+    port: DB_PORT,
     username: "test",
     password: "test",
     database: "test"

@@ -15,8 +15,8 @@ const PORT = 3030;
 const app = express();
 
 // Configure Express App Instance
-app.use(express.json( { limit: '50mb' } ));
-app.use(express.urlencoded( { extended: true, limit: '10mb' } ));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 app.use(cookieParser());
 
@@ -35,14 +35,17 @@ app.use(errorHandler());
 // Handle not valid route
 app.use('*', (req, res) => {
     res
-    .status(404)
-    .json( {status: false, message: 'Endpoint Not Found'} );
+        .status(404)
+        .json({ status: false, message: 'Endpoint Not Found' });
 })
 
 // Open Server on configurated Port
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.info('Server listening on port', PORT)
-    dbInitialize()
+    await dbInitialize()
         .then(() => console.log(`Database ${DB_NAME} is ready`))
-        .catch((err) => console.log(`Failed to load database: ${err}`));
+        .catch((err) => {
+            console.log(`Failed to load database: ${err}`)
+            return process.exit(84)
+        })
 });
