@@ -1,15 +1,2 @@
-.toolBar {
-    background-color: black;
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    margin:0 auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 
-.title {
-    color: yellow;
-    text-align: center;
-    font-size: 150%;
-    font-family: Arial, Helvetica, sans-serif;
-}
