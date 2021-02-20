@@ -1,26 +1,13 @@
 import 'module-alias/register';
 import router from "./routes/router"
 import { inject, errorHandler } from "express-custom-error"
-import env from "mandatoryenv"
 import express from "express"
 import cookieParser from "cookie-parser"
+import { DB_PORT, DB_NAME } from './models/appConfig';
+import dbInitialize from './models/appDatabase';
 
 // Patches
 inject(); // Patch express in order to use async / await syntax
-
-// Load .env Enviroment Variables to process.env
-
-env.load([
-    'DB_HOST',
-    'DB_DATABASE',
-    'DB_USER',
-    'DB_PASSWORD',
-    'PORT'
-]);
-
-const { PORT } = process.env;
-
-// Instantiate an Express Application
 
 const app = express();
 
@@ -50,7 +37,9 @@ app.use('*', (req, res) => {
 })
 
 // Open Server on configurated Port
-app.listen(
-    PORT,
-    () => console.info('Server listening on port', PORT)
-);
+app.listen(DB_PORT, () => {
+    console.info('Server listening on port', DB_PORT)
+    dbInitialize()
+        .then(() => console.log(`Database ${DB_NAME} is ready`))
+        .catch((err) => console.log(`Failed to load database: ${err}`));
+});
