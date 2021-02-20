@@ -1,5 +1,5 @@
 .post {
-    text-align: center;
+    text-align: left;
     background-color: cadetblue;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .photoProfile {
-    height: 40vmin;
+    height: 15vmin;
     pointer-events: none;
 }
 

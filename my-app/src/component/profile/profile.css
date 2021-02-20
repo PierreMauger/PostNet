@@ -1,0 +1,26 @@
+.profile {
+    margin: 50px 15px;
+}
+
+.profileInfo {
+    text-align: left;
+}
+
+.photoProfile {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.profileName {
+    text-decoration: black;
+    text-size-adjust: 5px;
+}
+
+.mood {
+    text-decoration: blanchedalmond;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
