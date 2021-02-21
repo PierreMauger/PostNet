@@ -1,3 +1,4 @@
+import User from './User'
 import {
     Entity, PrimaryGeneratedColumn, Column, BaseEntity,
 } from 'typeorm';
@@ -8,6 +9,9 @@ export default class Post extends BaseEntity {
     id!: string;
 
     @Column()
+    idUser?: User;
+
+    @Column()
     textPost?: string;
 
     @Column()
@@ -16,8 +20,9 @@ export default class Post extends BaseEntity {
     @Column()
     postDate: string;
 
-    constructor(textPost: string, imagePost: string, postDate: string) {
+    constructor(idUser: User, textPost: string, imagePost: string, postDate: string) {
         super();
+        this.idUser = idUser;
         this.textPost = textPost;
         this.imagePost = imagePost;
         this.postDate = postDate;
