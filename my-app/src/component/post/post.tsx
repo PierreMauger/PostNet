@@ -16,7 +16,7 @@ type Postprops = {
     postTitle?: string
     postDate: string
     imgPostUrl?: string
-    postMessage: string
+    postMessage?: string
 }
 
 const useStyles = makeStyles((theme: Theme) =>

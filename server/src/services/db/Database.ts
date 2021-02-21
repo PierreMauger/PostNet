@@ -1,4 +1,5 @@
 import { Pool } from 'pg';
+import { DB_PORT } from '../../models/appConfig'
 
 export class Database {
     private static instance: Database;
@@ -11,7 +12,7 @@ export class Database {
             host: 'postgres',
             database: 'postgres',
             password: 'password',
-            port: 5432
+            port: DB_PORT
         });
     }
 
