@@ -11,19 +11,11 @@ export default class User extends BaseEntity {
     name: string;
 
     @Column()
-    age: number;
+    image: string;
 
-    @Column()
-    school: string;
-
-    @Column()
-    experience: number;
-
-    constructor(name: string, age: number, school: string, experience: number) {
+    constructor(name: string, image: string) {
         super();
         this.name = name;
-        this.age = age;
-        this.school = school;
-        this.experience = experience;
+        this.image = image;
     }
 }
